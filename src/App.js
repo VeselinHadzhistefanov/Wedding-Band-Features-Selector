@@ -7,7 +7,10 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          <span style={{color:"lightblue"}}>Edit <code>src/App.js</code> and save to reload.</span>
+          <br></br>
+          This section is intended to represent the actual structure of the web page <br></br>
+          and stands for it's contents.
         </p>
         <a
           className="App-link"
@@ -17,8 +20,16 @@ function App() {
         >
           Learn React
         </a>
+        <br></br>
+        <MyButton></MyButton>
       </header>
     </div>
+  );
+}
+
+function MyButton() {
+  return (
+    <button>I'm a button</button>
   );
 }
 
