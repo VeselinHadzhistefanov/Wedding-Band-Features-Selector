@@ -1,1 +1,1 @@
-# React-Wedding-Band-Features-UI
+Wedding-Band-Features-Selector
