@@ -2,17 +2,43 @@ import logo from './logo.svg';
 import './App.css';
 import { WeddingBandFeatureSelector } from './WeddingBandFeatures';
 
-function App() {
-  let title = "Diamond setting style"
-  let values = ["Solitaire", "Pave", "Halo", "Three Stone", "Bezel", "Tension", "Cluster"]
-  let description = "Choose your ring's diamond setting style:"
+function WeddingBandFeatures() {
+  // Feature variations:
+  let features = []
+  features.push({
+    title: "THE HEAD",
+    description: "How do you want your center stone to be set?",
+    options: ["Four-prong", "Six-prong", "double prong", "V-prong/chevron", "diamond tipped", "bezel set", "half-bezel", "bar-set"]
+  })
 
+  features.push({
+    title: "THE SHANK",
+    description: "How do you want the band around your stone finger to look?",
+    options: ["traditional", "euro-style", "cathedral", "straight", "tapered", "reverse tapered", "split", "bypass", "criss-cross"]
+  })
+
+  let featureSelectors = features.map(feature =>
+    <div>
+      <WeddingBandFeatureSelector title={feature.title} description={feature.description} options={feature.options}></WeddingBandFeatureSelector>
+      <br></br>
+    </div>
+  );
+
+  return (
+    <div className="WeddingBandFeatures">
+      {featureSelectors}
+    </div>
+  );
+}
+
+
+function App() {
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          <span style={{color:"lightblue"}}>Edit <code>src/App.js</code> and save to reload.</span>
+          <span style={{ color: "lightblue" }}>Edit <code>src/App.js</code> and save to reload.</span>
           <br></br>
           This section is intended to represent the actual structure of the web page <br></br>
           and stands for it's contents.
@@ -28,7 +54,7 @@ function App() {
         <br></br>
         <MyYesButton></MyYesButton>
         <br></br>
-        <WeddingBandFeatureSelector title={title} description={description} options={values}></WeddingBandFeatureSelector> 
+        <WeddingBandFeatures></WeddingBandFeatures>
       </header>
     </div>
   );
@@ -40,4 +66,4 @@ function MyYesButton() {
   );
 }
 
-export {App, MyYesButton};
+export { App, MyYesButton };
