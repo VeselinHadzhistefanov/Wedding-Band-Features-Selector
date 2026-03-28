@@ -1,8 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
-import { WeddingBandSettingStyle } from './WeddingBandFeatures';
+import { WeddingBandFeatureSelector } from './WeddingBandFeatures';
 
 function App() {
+  let title = "Diamond setting style"
+  let values = ["Solitaire", "Pave", "Halo", "Three Stone", "Bezel", "Tension", "Cluster"]
+  let description = "Choose your ring's diamond setting style:"
+
   return (
     <div className="App">
       <header className="App-header">
@@ -24,7 +28,7 @@ function App() {
         <br></br>
         <MyYesButton></MyYesButton>
         <br></br>
-        <WeddingBandSettingStyle></WeddingBandSettingStyle> 
+        <WeddingBandFeatureSelector title={title} description={description} options={values}></WeddingBandFeatureSelector> 
       </header>
     </div>
   );
